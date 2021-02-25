@@ -26,14 +26,21 @@
 #                          -v ${USERPROFILE}/AppData/Local/Google/Picasa2/contacts:${USERPROFILE}/AppData/Local/Google/Picasa2/contacts \
 #           picprocessing
 #
-#    - This will allow you to run the necessary script without entering the
-#      container (but remember to mount the volumes containing the files you
-#      want to process).
+#    - This will allow you to run the necessary scripts without entering the
+#      container (assuming you mounted the volumes containing the files you
+#      want to process as described above).
 #
 #          > docker run -it picprocessing perl <app> -h
+#          > docker run -it picprocessing perl renamepics -h
+#
+#    - Alternately, you can enter the container's bash shell and execute
+#      the scripts from there:
+#
+#          > docker run -it picprocesing bash
 #
 # Within the container, enter the following commands to run the desired scripts:
 #
+#    > perl <app> -h
 #    > perl gpspics.pl -h
 #    > perl extractpicasainfo.pl -h
 #
